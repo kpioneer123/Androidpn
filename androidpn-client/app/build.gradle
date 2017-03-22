@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "org.androidpn.demoapp"
+        minSdkVersion 12
+        targetSdkVersion 21
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+
+
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:support-v4:25.2.0'
+    compile 'org.litepal.android:core:1.5.1'
+}
